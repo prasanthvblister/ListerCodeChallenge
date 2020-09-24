@@ -1,7 +1,6 @@
 const util = require("../functions");
 
 
-
 describe("Scenarios to remove blank space from a given string", () => {
     it("Verify whether leading or trailing space is removed if available for the given string", () => {
       let result = util.removeBlankSpace('     Blankspace        ');
