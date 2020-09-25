@@ -19,7 +19,6 @@ describe("Scenarios to remove blank space from a given string", () => {
       let result = util.removeBlankSpace();
       expect(result).toBe('')
     });
-  
   });
 describe("Scenarios to verify the string is palindrome or not ", () => {
     it("Verify that the given string is not empty", () => {
