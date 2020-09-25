@@ -19,5 +19,5 @@ exports.checkpalindrome = (value, caseSensitiveFlag) => {
       output += value.charAt(stringIndex);
       stringIndex--;
     }
-    return value === '' ? false : value === output;
+    return value === output;
   }

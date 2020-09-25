@@ -1,6 +1,4 @@
 const util = require("../functions");
-
-
 describe("Scenarios to remove blank space from a given string", () => {
     it("Verify whether leading or trailing space is removed if available for the given string", () => {
       let result = util.removeBlankSpace('     Blankspace        ');
@@ -16,11 +14,13 @@ describe("Scenarios to remove blank space from a given string", () => {
       let result = util.removeBlankSpace('Find    extraspace');
       expect(result).toBe('Findextraspace')
     });
+
+    it("Verify whether the empty string is Identified", () => {
+      let result = util.removeBlankSpace('             ');
+      expect(result).toBe('')
+    });
   
   });
-
-
-
 describe("Scenarios to verify the string is palindrome or not ", () => {
     it("Verify that the given string is not empty", () => {
         let result = util.checkpalindrome('testEmpty', false);
@@ -28,8 +28,8 @@ describe("Scenarios to verify the string is palindrome or not ", () => {
       });
       
       it("Verify that the given string is empty", () => {
-        let result = util.checkpalindrome('', false);
-        expect(result).toBeFalsy();
+        let result = util.checkpalindrome('', true);
+        expect(result).toBeTruthy();
       });
     
       it("Verify whether the given alpha numeric is a palindrome", () => {
@@ -56,10 +56,14 @@ describe("Scenarios to verify the string is palindrome or not ", () => {
         let result = util.checkpalindrome('malayalam', false);
         expect(result).toBeTruthy();
       });
+
+      it("Verify that the given string with casesensitive is a palindrome", () => {
+        let result = util.checkpalindrome('MalaYalaM', true);
+        expect(result).toBeTruthy();
+      });
     
       it("Verify  whether the string with punctuation is a palindrome", () => {
         let result = util.checkpalindrome("Its Dell's Laptop", false);
         expect(result).toBeFalsy();
       });
-    
     });
