@@ -15,8 +15,8 @@ describe("Scenarios to remove blank space from a given string", () => {
       expect(result).toBe('Findextraspace')
     });
 
-    it("Verify whether the empty string is Identified", () => {
-      let result = util.removeBlankSpace('             ');
+    it("Verify whether the given string is undefined", () => {
+      let result = util.removeBlankSpace();
       expect(result).toBe('')
     });
   
@@ -30,6 +30,11 @@ describe("Scenarios to verify the string is palindrome or not ", () => {
       it("Verify that the given string is empty", () => {
         let result = util.checkpalindrome('', true);
         expect(result).toBeTruthy();
+      });
+
+      it(" ", () => {
+        let result = util.checkpalindrome();
+        expect(result).toBeFalsy();
       });
     
       it("Verify whether the given alpha numeric is a palindrome", () => {
