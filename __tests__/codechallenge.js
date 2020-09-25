@@ -23,42 +23,42 @@ describe("Scenarios to remove blank space from a given string", () => {
   });
 describe("Scenarios to verify the string is palindrome or not ", () => {
     it("Verify that the given string is not empty", () => {
-        let result = util.checkpalindrome('testEmpty', false);
+        let result = util.checkpalindrome('testEmpty');
         expect(result).toBeFalsy();
       });
       
       it("Verify that the given string is empty", () => {
-        let result = util.checkpalindrome('', true);
-        expect(result).toBeTruthy();
+        let result = util.checkpalindrome('');
+        expect(result).toBeFalsy();
       });
 
-      it(" ", () => {
+      it("Verify that the given string is undefined", () => {
         let result = util.checkpalindrome();
         expect(result).toBeFalsy();
       });
     
       it("Verify whether the given alpha numeric is a palindrome", () => {
-        let result = util.checkpalindrome('Tes110ter', false);
+        let result = util.checkpalindrome('Tes110ter');
         expect(result).toBeFalsy();
       });
     
       it("Verify whether the string with special characters is a palindrome", () => {
-        let result = util.checkpalindrome('m@s@m', false);
+        let result = util.checkpalindrome('m@s@m', true);
         expect(result).toBeTruthy();
       });
     
       it("Verify whether the given number is a palindrome", () => {
-        let result = util.checkpalindrome('12321', false);
+        let result = util.checkpalindrome('12321');
         expect(result).toBeTruthy();
       });
 
       it("Verify whether the given number is not a palindrome", () => {
-        let result = util.checkpalindrome('245376', false);
+        let result = util.checkpalindrome('245376');
         expect(result).toBeFalsy();
       });
 
       it("Verify that the given string is a palindrome", () => {
-        let result = util.checkpalindrome('malayalam', false);
+        let result = util.checkpalindrome('malayalam', true);
         expect(result).toBeTruthy();
       });
 
@@ -68,7 +68,7 @@ describe("Scenarios to verify the string is palindrome or not ", () => {
       });
     
       it("Verify  whether the string with punctuation is a palindrome", () => {
-        let result = util.checkpalindrome("Its Dell's Laptop", false);
+        let result = util.checkpalindrome("Its Dell's Laptop");
         expect(result).toBeFalsy();
       });
     });
